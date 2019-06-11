@@ -13,7 +13,12 @@ passport.use(new GoogleStrategy({
     new user({
         googleId: profile.id,
         nome: profile.name,
-        email: profile.emails
+        foto: profile.photos,
+        emails:{
+        email: profile.email,
+        email_verified: profile.email_verified,
+        },
+        local: profile.locale
     }).save();    
 })
 );

@@ -4,8 +4,8 @@ const Schema = mongoose.Schema;
 userSchema = new Schema({
     googleId: String,
     nome: String,
-    primeiro_nome: String,
-    ultimo_nome: String,
+    given_name: String,
+    family_name: String,
     foto: String,
     email: String,
     email_verified: {
