@@ -1,17 +1,21 @@
-//External imports
+//external imports
 const express = require('express');
 const mongoose = require('mongoose');
-require('./services/passport');
 const keys = require('./config/keys');
+require('./models/user');
+require('./services/passport');
 
-//Connect in Database
+
+
+
+//connect in database
 mongoose.connect(keys.mongoURI);
 mongoose.connection.on('error', console.error.bind(console, 'Connection error!'));
 mongoose.connection.once('open', () => {
     console.log('Connected to database!');
 });
 
-//Internal Imports
+//internal imports
 const app = express();
 
 require('./routes/authRoutes')(app);
