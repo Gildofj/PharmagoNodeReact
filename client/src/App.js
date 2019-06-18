@@ -8,13 +8,13 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Seus medicamentos ao alcance da sua mão.
         </p>
         <a
           className="App-link"
           href="/auth/google"
         >
-          Acessar com sua conta Google
+          Cadastro com conta Google
         </a>
       </header>
     </div>
