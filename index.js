@@ -17,6 +17,7 @@ mongoose.connection.once('open', () => {
     console.log('Connected to database!');
 });
 
+//passport initilize
 app.use(
     cookieSession({
         maxAge: 30 * 24 * 60 * 60 * 1000,
