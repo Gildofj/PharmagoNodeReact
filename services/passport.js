@@ -30,4 +30,4 @@ passport.use(new GoogleStrategy({
             }).save()
             done(null, user)  
 })
-);
+); 
