@@ -5,7 +5,7 @@ import * as actions from '../actions';
 
 import Header from './Header';
 import Login from './Login';
-const List = () => <h2>List</h2>
+// import List from './List'
 const Drug = () => <h2>Drug</h2>
 const Landing = () => <h2>Landing</h2>
 
@@ -20,7 +20,7 @@ class App extends Component{
                 <div>
                     <Header/>
                     <Route exact path="/" component={Landing}/>
-                    <Route exact path="/drugs" component={List}/>
+                    {/* <Route exact path="/drugs" component={List}/> */}
                     <Route path="/drugs/:id" component={Drug}/>
                     <Route path="/login" component={Login}/>    
                 </div>

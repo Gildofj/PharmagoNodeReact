@@ -23,7 +23,7 @@ class Login extends Component {
                         <Button id="btnLogin" type="input">Login</Button>
                         <br/>
                         <br/>
-                        <a id="btnGoogleCadatro" type="input" className="btn" href="/auth/google">Cadastrar com Google</a>
+                        <a id="btnGoogleCadatro" type="input" className="btn" href="/auth/google">Login com Google</a>
                     </div>
                 </Row>
             </Col>
