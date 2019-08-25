@@ -17,16 +17,6 @@ class Header extends Component {
 
         M.Dropdown.init(dropdowns, options);
     }
-    renderContent(){
-        switch (this.props.auth) {
-            case null:
-                return;
-            case false:
-                return '/login';
-            default:
-                return this.render();
-        }
-    }
     render() {
         console.log(this.props);
         return (
