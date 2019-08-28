@@ -7,47 +7,20 @@ import Header from './Header';
 import Login from './Login';
 // import List from './List'
 const Drug = () => <h2>Drug</h2>
-const Landing = () => <h2><Header/></h2>
-
-
-function mapStateTopProps(auth) {
-    return { auth }
-}
-
-const Authenticate = {
-    mapStateTopProps,
-    isAuthenticate: false,
-    Auth(){
-        if(this.props.payload = false)
-            this.isAuthenticate = false;
-        else 
-            this.isAuthenticate = true;
-    }
-}
+const Landing = () => <h2>Landing</h2>
 
 function PrivateRoute({ component: Component, ...rest }) {
     return (
         <Route
-        {...rest}
-        render={props =>
-          Authenticate.isAuthenticate ? (
-            // <Component {...props}/>]
-            <Redirect
-              to={{
-                pathname: "/",
-                state: { from: props.location }
-              }}
-            />
-          ) : (
-            <Redirect
-              to={{
-                pathname: "/login",
-                state: { from: props.location }
-              }}
-            />
-          )
-        }
-      />
+          {...rest}
+          render={auth =>
+            auth ? (
+            <Redirect push to="/"/>
+            ) : (
+            <Redirect push to="/login"/>
+            )
+          }
+        />
     );
   }
 
@@ -55,11 +28,14 @@ class App extends Component{
     componentDidMount() {
         this.props.fetchUser();
     }
+
     render(){
+
     return (
         <div className="container">
             <BrowserRouter>
                 <div>
+                    <Header/>
                     <PrivateRoute exact path="/" component={Landing}/>
                     {/* <Route exact path="/drugs" component={List}/> */}
                     <PrivateRoute path="/drugs/:id" component={Drug}/>

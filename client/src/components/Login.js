@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Button, TextInput } from 'react-materialize';
-import { BrowserRouter, Route, Redirect } from 'react-router-dom';
+import { Row, Col, TextInput } from 'react-materialize';
 import * as actions from '../actions';
 import { connect } from 'react-redux';
 
@@ -15,9 +14,6 @@ class Login extends Component {
             <Row>
             <Col s={12}>
                 <Row>
-                    <figure>
-                    <img src="https://uploaddeimagens.com.br/images/002/292/123/full/LOGO.png?1566704011"/>
-                    </figure>
                     <div>
                         <TextInput email validate label="Email" error="E-mail Incorreto" sucess="Great" s={12}/>
                     </div>      
