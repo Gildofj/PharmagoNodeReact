@@ -5,25 +5,10 @@ import * as actions from '../actions';
 
 import Header from './Header';
 import Login from './Login';
+import Landing from './Landing';
 // import List from './List'
 const Drug = () => <h2>Drug</h2>
-const Landing = () => <h2>Landing</h2>
-
-function PrivateRoute({ component: Component, ...rest }) {
-    return (
-        <Route
-          {...rest}
-          render={auth =>
-            auth ? (
-            <Redirect push to="/"/>
-            ) : (
-            <Redirect push to="/login"/>
-            )
-          }
-        />
-    );
-  }
-
+ 
 class App extends Component{
     componentDidMount() {
         this.props.fetchUser();
@@ -36,10 +21,14 @@ class App extends Component{
             <BrowserRouter>
                 <div>
                     <Header/>
-                    <PrivateRoute exact path="/" component={Landing}/>
+                    <Route exact path="/" render={()=>
+                        <Redirect to="/landing"/>
+                    }
+                    />
+                    <Route path="/landing" component={Landing}/>
                     {/* <Route exact path="/drugs" component={List}/> */}
-                    <PrivateRoute path="/drugs/:id" component={Drug}/>
-                    <Route path="/login" component={Login}/>    
+                    <Route path="/drugs/:id" component={Drug}/>  
+                    <Route path="/login" component={Login}/> 
                 </div>
             </BrowserRouter>
         </div>
