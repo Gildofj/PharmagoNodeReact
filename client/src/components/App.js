@@ -7,7 +7,7 @@ import Header from './Header';
 import Login from './Login';
 import Landing from './Landing';
 // import List from './List'
-const Drug = () => <h2>Drug</h2>
+import Drug from './Drug';
  
 class App extends Component{
     componentDidMount() {
