@@ -26,22 +26,22 @@ class Header extends Component {
             case false:
                 return;
             default:
-                return (
+                return [
                 <Navbar brand={<Link to={this.props.auth ? '/' : '/login'}>PharmaGO</Link>} alignLinks="right">
-                    <NavItem href="/drugs">
+                    <NavItem key="btnDrugs" href="/drugs">
                         Remédios
                     </NavItem>
-                    <NavItem href="/drugs/carrinho">
+                    <NavItem key="btnCarrinho" href="/drugs/carrinho">
                         Carrinho
                     </NavItem>
-                    <Dropdown trigger={<a><Icon>view_module</Icon></a>}>    
-                        <a href="/" style={{fontSize: '12px'}}>Sua Conta</a>
-                        <a href="/" style={{fontSize: '12px'}}>Configurações</a>
+                    <Dropdown key="DropDown" trigger={<a><Icon>view_module</Icon></a>}>    
+                        <a key="btnConta" href="/" style={{fontSize: '12px'}}>Sua Conta</a>
+                        <a key="btnConfig" href="/" style={{fontSize: '12px'}}>Configurações</a>
                         <Divider />
-                        <a href="/api/logout" style={{fontSize: '12px'}}>Sair</a>
+                        <a key="btnSair"  href="/api/logout" style={{fontSize: '12px'}}>Sair</a>
                     </Dropdown>
                 </Navbar>
-                );
+                ];
         }
     }
 

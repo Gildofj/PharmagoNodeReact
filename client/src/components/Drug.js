@@ -5,7 +5,7 @@ class Drug extends Component {
     render(){
         return(
             <div>
-                <li><Payments/></li>
+                <li key="Payments"><Payments/></li>
             </div>
         );
     }

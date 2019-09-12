@@ -2,6 +2,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
+const bodyParser = require('body-parser');
 const passport = require('passport');
 const keys = require('./config/keys');
 require('./models/user');
@@ -18,6 +19,7 @@ mongoose.connection.once('open', () => {
 });
 
 //passport initilize
+app.use(bodyParser.json());
 app.use(
     cookieSession({
         maxAge: 30 * 24 * 60 * 60 * 1000,
@@ -28,6 +30,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 require('./routes/authRoutes')(app);
+require('./routes/billingRoutes')(app);
 
 //server connect
 const PORT = process.env.PORT || 4000;
