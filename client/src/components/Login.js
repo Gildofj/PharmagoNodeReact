@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Button, TextInput } from 'react-materialize';
+import { Row, Col, TextInput } from 'react-materialize';
 import * as actions from '../actions';
 import { connect } from 'react-redux';
 
@@ -7,8 +7,10 @@ class Login extends Component {
     componentDidMount() {
         this.props.fetchUser();
     }
+
     render() {
-        return(
+
+        return (
             <Row>
             <Col s={12}>
                 <Row>
@@ -20,16 +22,16 @@ class Login extends Component {
                     </div>
                     <br/>
                     <div>
-                        <Button id="btnLogin" type="input">Login</Button>
+                    <a id="btnGoogleCadatro" type="input" className="btn" href="/auth/google">Login</a>
                         <br/>
                         <br/>
                         <a id="btnGoogleCadatro" type="input" className="btn" href="/auth/google">Login com Google</a>
                     </div>
                 </Row>
             </Col>
-            </Row>
+        </Row>
         );
     }
-}
+    }
 
 export default connect(null, actions)(Login);
