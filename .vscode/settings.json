@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/50884ea3-f6ce-4808-8b18-96ff4e92b5a7/resourceGroups/pharmago/providers/Microsoft.Web/sites/pharmago",
+    "appService.deploySubpath": ""
+}
