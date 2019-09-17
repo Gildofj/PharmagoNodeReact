@@ -1,5 +1,5 @@
 {
-  "name": "PharmaGO",
+  "name": "PMIAPP-Udemy",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,6 @@
     "npm": "5.0.3"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "server": "nodemon index.js",
     "client": "npm run start --prefix client",
