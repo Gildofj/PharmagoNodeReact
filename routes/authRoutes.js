@@ -22,9 +22,4 @@ app.get('/api/logout', (req, res, next) => {
 app.get('/api/current_user', (req, res) => {
     res.send(req.user);
 });
-
-app.get('/api/login', (req, res) => {
-    req.logout();
-    res.redirect('/login');
-});
 };
