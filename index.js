@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const passport = require('passport');
 const keys = require('./config/keys');
 require('./models/user');
+require('./models/drugs');
 require('./services/passport');
 
 //internal imports
