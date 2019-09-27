@@ -37,6 +37,7 @@ class Header extends Component {
                     <Dropdown key="DropDown" trigger={<a><Icon>view_module</Icon></a>}>    
                         <a key="btnConta" href="/" style={{fontSize: '12px'}}>Sua Conta</a>
                         <a key="btnConfig" href="/" style={{fontSize: '12px'}}>Configurações</a>
+                        <a key="btnConfig" href="/suporte" style={{fontSize: '12px'}}>Suporte</a>
                         <Divider />
                         <a key="btnSair"  href="/api/logout" style={{fontSize: '12px'}}>Sair</a>
                     </Dropdown>

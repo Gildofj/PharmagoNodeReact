@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
+import Auth from './Auth';
 
 import Header from './Header';
 import Login from './Login';
 import Landing from './Landing';
-// import List from './List'
 import Drug from './Drug';
+import Suporte from './Suporte';
+
  
 class App extends Component{
     componentDidMount() {
@@ -21,14 +23,14 @@ class App extends Component{
             <BrowserRouter>
                 <div>
                     <Header/>
-                    <Route exact path="/" render={()=>
-                        <Redirect to="/landing"/>
+                    <Auth exact path="/" render={()=>
+                        <Redirect to="/drugs"/>
                     }
                     />
-                    <Route path="/landing" component={Landing}/>
-                    {/* <Route exact path="/drugs" component={List}/> */}
-                    <Route path="/drugs/:id" component={Drug}/>  
+                    <Auth path="/drugs" component={Landing}/>
+                    <Auth path="/drugs/:id" component={Drug}/>  
                     <Route path="/login" component={Login}/> 
+                    <Auth path="/suporte" component={Suporte}/>
                 </div>
             </BrowserRouter>
         </div>
