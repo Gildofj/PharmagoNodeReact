@@ -23,7 +23,7 @@ class App extends Component{
             <BrowserRouter>
                 <div>
                     <Header/>
-                    <Auth exact path="/" render={()=>
+                    <Route exact path="/" render={()=>
                         <Redirect to="/drugs"/>
                     }
                     />

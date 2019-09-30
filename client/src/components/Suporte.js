@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, TextInput, Textarea } from 'react-materialize'
-
+import { Row, Col, TextInput, Textarea } from 'react-materialize';
 import {connect} from 'react-redux';
 import * as actions from '../actions';
 
@@ -18,7 +17,7 @@ class Suporte extends Component {
                     </div>
                     <br/>
                     <div style={{textAlign: "center"}}>
-                        <a id="btnGoogleCadatro" type="input" className="btn" style={{margin: "auto"}}>Enviar</a>
+                        <a id="btnEnviarEmail" type="input" className="btn" style={{margin: "auto"}}>Enviar</a>
                     </div>
                 </Row>
             </Col>

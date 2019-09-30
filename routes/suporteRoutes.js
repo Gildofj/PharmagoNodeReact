@@ -6,12 +6,12 @@ const suporteTemplate = require('../services/emailTemplates/suporteTemplate');
 const Mail = mongoose.model('mail');
 
 module.exports = app => {
-    app.post('/api/suporte', requireLogin, (req, res) => {
-        const {assunto, remetente, corpoEmail} = req.body;
+    app.post('/api/suporte', (req, res) => {
+        const {assunto, remetente, corpoEmail} = req.corpoEmail;
         
         const mail = new Mail({
             assunto,
-            remetente,
+            remetente: remetente.split(',').map(email => ({ email: email.trim() })),
             corpoEmail,
             _user: req.user.id,
             dataSent: Date.now()
