@@ -17,7 +17,7 @@ class Suporte extends Component {
                     </div>
                     <br/>
                     <div style={{textAlign: "center"}}>
-                        <a id="btnEnviarEmail" type="input" className="btn" style={{margin: "auto"}}>Enviar</a>
+                        <a id="btnEnviarEmail" href="/api/suporte" type="input" className="btn" style={{margin: "auto"}}>Enviar</a>
                     </div>
                 </Row>
             </Col>

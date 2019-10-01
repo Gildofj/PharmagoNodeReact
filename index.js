@@ -7,6 +7,7 @@ const passport = require('passport');
 const keys = require('./config/keys');
 require('./models/user');
 require('./models/drugs');
+require('./models/mail');
 require('./services/passport');
 
 //internal imports

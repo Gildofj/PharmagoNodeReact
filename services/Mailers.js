@@ -12,7 +12,7 @@ class Mailer extends helper.Mail {
         this.corpoEmail = new helper.Content('text/html', content);
         this.remetente = this.formatAddresses(remetente);
 
-        this.addContent(this.corpo)
+        this.addContent(this.corpoEmail)
         this.addClickTracking();
         this.addRemetente();
     }

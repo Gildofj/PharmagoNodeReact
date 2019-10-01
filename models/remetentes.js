@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const recipientSchema = new Schema ({
+const remetenteSchema = new Schema ({
     email: String
 });
 
-module.exports = recipientSchema;
+module.exports = remetenteSchema;

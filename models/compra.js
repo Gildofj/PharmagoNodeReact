@@ -8,4 +8,4 @@ compraSchema = new Schema({
     dataCompra: Date
 });
 
-module.exports = compraSchema;
+mongoose.model('compra', compraSchema);
