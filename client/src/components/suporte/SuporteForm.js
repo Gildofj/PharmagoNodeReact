@@ -4,16 +4,11 @@ import { reduxForm, Field } from 'redux-form';
 import SuporteField from './SuporteField';
 import validateEmails from '../../util/validateEmails';
 import { Row, Col } from 'react-materialize';
-
-const FIELDS = [
-    {label: 'Email', name: 'emails', noValueError: 'Insira um e-mail válido!'},
-    {label: 'Assunto', name: 'subject', noValueError: 'Informe um Assunto!'},
-    {label: 'Mensagem', name: 'body', noValueError: 'Preencha o corpo do e-mail!'}
-]
+import formFields from './formFields' 
 
 class SuporteForm extends Component {
     renderField(){
-        return _.map(FIELDS, ({label, name}) => {
+        return _.map(formFields, ({label, name}) => {
             return (
                 <Field key={name} component={SuporteField} type="text" label={label} name={name}/>
             );
@@ -48,9 +43,9 @@ class SuporteForm extends Component {
 function validate(values) {
     const errors = {};
 
-    errors.emails = validateEmails(values.emails || '');
+    errors.emails = validateEmails(values.emails || ' ');
 
-    _.each(FIELDS, ({ name, noValueError }) => {
+    _.each(formFields, ({ name, noValueError }) => {
         if(!values[name]){
             errors[name] = noValueError;
         }

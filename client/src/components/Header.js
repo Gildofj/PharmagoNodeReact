@@ -27,19 +27,19 @@ class Header extends Component {
                 return;
             default:
                 return [
-                <Navbar brand={<Link to={this.props.auth ? '/' : '/login'}>PharmaGO</Link>} alignLinks="right">
-                    <NavItem key="btnDrugs" href="/drugs">
+                <Navbar key={this.props} brand={<Link to={this.props.auth ? '/' : '/login'}>PharmaGO</Link>} alignLinks="right">
+                    <NavItem href="/drugs">
                         Remédios
                     </NavItem>
-                    <NavItem key="btnCarrinho" href="/drugs/carrinho">
+                    <NavItem  href="/drugs/carrinho">
                         Carrinho
                     </NavItem>
-                    <Dropdown key="DropDown" trigger={<a><Icon>view_module</Icon></a>}>    
-                        <a key="btnConta" href="/" style={{fontSize: '12px'}}>Sua Conta</a>
-                        <a key="btnConfig" href="/" style={{fontSize: '12px'}}>Configurações</a>
-                        <a key="btnConfig" href="/suporte" style={{fontSize: '12px'}}>Suporte</a>
+                    <Dropdown trigger={<a><Icon>view_module</Icon></a>}>    
+                        <Link to="/" style={{fontSize: '12px'}}>Sua Conta</Link>
+                        <Link to="/" style={{fontSize: '12px'}}>Configurações</Link>
+                        <Link to="/suporte" style={{fontSize: '12px'}}>Suporte</Link>
                         <Divider />
-                        <a key="btnSair"  href="/api/logout" style={{fontSize: '12px'}}>Sair</a>
+                        <Link  to="/api/logout" style={{fontSize: '12px'}}>Sair</Link>
                     </Dropdown>
                 </Navbar>
                 ];
