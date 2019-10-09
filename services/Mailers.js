@@ -1,24 +1,24 @@
 const sendgrid = require('sendgrid');
 const helper = sendgrid.mail;
-const keys = require('../config/keys')
+const keys = require('../config/keys');
 
 class Mailer extends helper.Mail {
-    constructor({assunto, remetente}, content){
+    constructor({subject, remetentes}, content){
         super();
 
         this.sgAPI = sendgrid(keys.sendGridKey);
         this.from_email = new helper.Email('suporte@pharmago.com');
-        this.assunto = assunto;
-        this.corpoEmail = new helper.Content('text/html', content);
-        this.remetente = this.formatAddresses(remetente);
+        this.subject = subject;
+        this.body = new helper.Content('text/html', content);
+        this.remetentes = this.formatAddresses(remetentes);
 
-        this.addContent(this.corpoEmail)
+        this.addContent(this.body);
         this.addClickTracking();
         this.addRemetente();
     }
 
-    formatAddresses(remetente){
-        return remetente.map(({ email }) => {
+    formatAddresses(remetentes){
+        return remetentes.map(({ email }) => {
             return new helper.Email(email);
         });
     }
@@ -34,7 +34,7 @@ class Mailer extends helper.Mail {
     addRemetente() {
         const personalize = new helper.Personalization();
 
-        this.remetente.forEach(remetente => {
+        this.remetentes.forEach(remetente => {
             personalize.addTo(remetente);
         });
         this.addPersonalization(personalize);
@@ -43,10 +43,10 @@ class Mailer extends helper.Mail {
     async send() {
         const request = this.sgAPI.emptyRequest({
             method: 'POST',
-            path: '/V3/mail/send',
+            path: '/v3/mail/send',
             body: this.toJSON()
         });
-
+        
         const response = this.sgAPI.API(request);
         return response;
     }

@@ -8,7 +8,7 @@ import Header from './Header';
 import Login from './Login';
 import Landing from './Landing';
 import Drug from './Drug';
-import Suporte from './Suporte';
+import Suporte from './suporte/Suporte';
 
  
 class App extends Component{

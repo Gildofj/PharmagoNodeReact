@@ -8,6 +8,8 @@ import 'react-materialize';
 
 import App from './components/App';
 import reducers from './reducers';
+
+//callback axios
 import axios from 'axios';
 window.axios = axios;
 
