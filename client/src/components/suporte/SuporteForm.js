@@ -20,14 +20,8 @@ class SuporteForm extends Component {
             <Row>
             <Col s={12}>
                 <Row>
-                    <form onSubmit={this.props.handleSubmit(values => console.log(values))}>
+                    <form onSubmit={this.props.handleSubmit(this.props.onMailSubmit)}>
                         {this.renderField()}
-                        {/* <div>
-                            <TextInput label="Email" s={12} render={this.renderField()}/>
-                        </div>
-                        <div>
-                            <Textarea text label="Mensagem" style={{height: "120px"}} s={12}/>
-                        </div> */}
                         <br/>
                         <div style={{textAlign: "center"}}>
                             <button type="submit" className="btn" style={{margin: "auto"}}>Enviar</button>
@@ -43,7 +37,7 @@ class SuporteForm extends Component {
 function validate(values) {
     const errors = {};
 
-    errors.emails = validateEmails(values.emails || ' ');
+    errors.remetentes = validateEmails(values.remetentes || '');
 
     _.each(formFields, ({ name, noValueError }) => {
         if(!values[name]){
@@ -56,5 +50,6 @@ function validate(values) {
 
 export default reduxForm({
     validate,
-    form: 'suporteForm'
+    form: 'suporteForm',
+    destroyOnUnmount: false
 })(SuporteForm);

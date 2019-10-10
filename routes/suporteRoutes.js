@@ -28,7 +28,7 @@ module.exports = app => {
             await mailer.send();
             await mail.save();
 
-            res.redirect('/api/suporte/sucesso');
+            res.send(this.props)
         } catch (err) {
             res.status(422).send(err)
         }
