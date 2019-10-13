@@ -7,7 +7,7 @@ import Auth from './Auth';
 import Header from './Header';
 import Login from './Login';
 import Landing from './Landing';
-import Drug from './Drug';
+import Drug from './drugs/Drug';
 import Suporte from './suporte/Suporte';
 
  

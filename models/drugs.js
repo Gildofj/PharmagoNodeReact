@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 drugsSchema = new Schema({
-    tituloDrugs: String,
+    tituloDrug: String,
     preco: String,
     descricao: String,
     compra: {type: Number, default: 0}

@@ -10,7 +10,7 @@ module.exports = mail => {
             <p>Caso deseje entrar em contato novamente basta ligar no número (48) 9 9133-3748 
             ou abrir um novo chamado no link abaixo</p>
             <div>
-                <a href="${keys.redirectDomain}/suporte">Contato</a>
+                <a href="${keys.redirectDomain}/suporte/${mail.id}">Contato</a>
             </div>
         </div>
     </html>

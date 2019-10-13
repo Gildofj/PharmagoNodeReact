@@ -4,7 +4,7 @@ import { reduxForm, Field } from 'redux-form';
 import SuporteField from './SuporteField';
 import validateEmails from '../../util/validateEmails';
 import { Row, Col } from 'react-materialize';
-import formFields from './formFields' 
+import formFields from './formFields';
 
 class SuporteForm extends Component {
     renderField(){

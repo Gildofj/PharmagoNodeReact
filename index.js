@@ -14,6 +14,7 @@ require('./services/passport');
 const app = express();
 
 //connect in database
+mongoose.Promise = global.Promise;
 mongoose.connect(keys.mongoURI);
 mongoose.connection.on('error', console.error.bind(console, 'Connection error!'));
 mongoose.connection.once('open', () => {
@@ -32,6 +33,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 require('./routes/authRoutes')(app);
+require('./routes/drugsRoutes')(app);
 require('./routes/suporteRoutes')(app);
 require('./routes/billingRoutes')(app);
 

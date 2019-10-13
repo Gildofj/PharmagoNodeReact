@@ -4,14 +4,14 @@ const requireLogin = require('../middlewares/requireLogin');
 
 module.exports = app => {
     app.post('/api/stripe', requireLogin, async (req, res) => {
-        const charge = await stripe.charges.create({
+        const billing = await stripe.charges.create({
             amount: 500,
             currency: 'usd',
             description: 'Efetue seu pagamento aqui!',
             source: req.body.id
         });
 
-        console.log(charge);
+        console.log(billing);
         res.redirect('/api/compra')
     });
 

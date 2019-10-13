@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Payments from './Payments';
+import Payments from '../Payments';
 
 class Drug extends Component {
     render(){
