@@ -9,16 +9,18 @@ class DrugsList extends Component {
     }
 
     renderDrugs() {
+        console.log(this.props.drugs)
         return this.props.drugs.map(drug => {
             return (
-                        <Card
-                          className="blue-grey darken-1"
-                          textClassName="white-text"
-                          title={drug.tituloDrug}
+                    <Card
+                        className="blue-grey darken-1"
+                        textClassName="white-text"
+                        title={drug.tituloDrug}
+                        key={drug._id}  
                         >
                         {drug.descricao}
                         <p className="right">R${drug.preco}</p>
-                        </Card>
+                    </Card>
             );
         });
     }
