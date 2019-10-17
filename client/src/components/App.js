@@ -9,6 +9,7 @@ import Login from './Login';
 import Landing from './Landing';
 import Drug from './drugs/Drug';
 import Suporte from './suporte/Suporte';
+import Carrinho from './Carrinho';
 
  
 class App extends Component{
@@ -28,7 +29,8 @@ class App extends Component{
                     }
                     />
                     <Auth path="/drugs" component={Landing}/>
-                    <Auth path="/drugs/:id" component={Drug}/>  
+                    <Auth path="/drug/:id" component={Drug}/>  
+                    <Auth path="/carrinho" component={Carrinho}/>
                     <Route path="/login" component={Login}/> 
                     <Auth path="/suporte" component={Suporte}/>
                 </div>

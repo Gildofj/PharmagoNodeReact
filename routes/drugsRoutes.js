@@ -9,4 +9,10 @@ module.exports = app => {
 
         res.send(drugs);
     });
+
+    app.get('/api/drug/:id', requireLogin, async (req, res) => {
+        const drug = await Drugs.find({"_id": req.headers.referer.substr(-24)});
+
+        res.send(drug);
+    })
 }

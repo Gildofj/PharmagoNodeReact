@@ -9,17 +9,17 @@ class DrugsList extends Component {
     }
 
     renderDrugs() {
-        console.log(this.props.drugs)
         return this.props.drugs.map(drug => {
+            const urlDrug =`/drug/${drug._id}`
             return (
-                    <Card
-                        className="blue-grey darken-1"
-                        textClassName="white-text"
-                        title={drug.tituloDrug}
-                        key={drug._id}  
+                    <Card 
+                        key={drug._id}
+                        textClassName="pink-text"
+                        actions={[<a href={urlDrug} key={0}>Detalhes</a>]}
                         >
+                        <span className="card-title"><strong>{drug.tituloDrug}</strong></span>
                         {drug.descricao}
-                        <p className="right">R${drug.preco}</p>
+                        <h5 className="right"><strong>R${drug.preco}</strong></h5>
                     </Card>
             );
         });

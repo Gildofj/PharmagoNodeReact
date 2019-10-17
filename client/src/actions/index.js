@@ -23,5 +23,11 @@ export const submitMail = (values, history) => async dispatch => {
 export const fetchDrugs = () => async dispatch => {
     const res = await axios.get('/api/drugs');
 
-    dispatch({ type: FETCH_DRUGS, payload: res.data })
-} 
+    dispatch({ type: FETCH_DRUGS, payload: res.data });
+};
+
+export const fetchDrug = () => async dispatch => {
+    const res = await axios.get('/api/drug/:id');
+
+    dispatch({ type: FETCH_DRUGS, payload: res.data});
+};

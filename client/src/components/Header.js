@@ -31,7 +31,7 @@ class Header extends Component {
                     <NavItem href="/drugs">
                         Remédios
                     </NavItem>
-                    <NavItem  href="/drugs/carrinho">
+                    <NavItem  href="/carrinho">
                         Carrinho
                     </NavItem>
                     <Dropdown trigger={<a><Icon>view_module</Icon></a>}>    
