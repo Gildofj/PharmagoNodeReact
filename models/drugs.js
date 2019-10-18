@@ -5,6 +5,7 @@ drugsSchema = new Schema({
     tituloDrug: String,
     preco: String,
     descricao: String,
+    imagem: String,
     compra: {type: Number, default: 0}
 });
 

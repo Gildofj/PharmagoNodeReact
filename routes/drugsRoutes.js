@@ -14,5 +14,5 @@ module.exports = app => {
         const drug = await Drugs.find({"_id": req.headers.referer.substr(-24)});
 
         res.send(drug);
-    })
+    });
 }
