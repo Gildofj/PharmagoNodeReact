@@ -6,11 +6,14 @@ import * as actions from '../actions';
 
 class Payments extends Component {
     render(){
+        const carrinho =  JSON.parse(localStorage.getItem('cart'));  
+        const preco = parseFloat(carrinho.preco);
         return(
             <StripeCheckout
             name="PharmaGO"
             description="Efetue seu pagamento aqui!"
-            amount={500}
+            amount={preco * 100}
+            currency="BRL"
             token={token => this.props.handleToken(token)}
             stripeKey={process.env.REACT_APP_STRIPE_KEY}
             >

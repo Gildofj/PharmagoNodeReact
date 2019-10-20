@@ -27,7 +27,7 @@ class Header extends Component {
                 return;
             default:
                 return [
-                <Navbar key={this.props} brand={<Link to={this.props.auth ? '/' : '/login'}>PharmaGO</Link>} alignLinks="right">
+                <Navbar key={this.props} brand={<Link to={this.props.auth ? '/drugs' : '/login'}>PharmaGO</Link>} alignLinks="right">
                     <NavItem href="/drugs">
                         Remédios
                     </NavItem>

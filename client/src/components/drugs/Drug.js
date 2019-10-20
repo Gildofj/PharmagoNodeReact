@@ -11,7 +11,7 @@ class Drug extends Component {
 
 
     saveCart(drug) {
-        localStorage.setItem('cart.product', JSON.stringify(drug))
+        localStorage.setItem('cart', JSON.stringify(drug));
     }
 
     renderDrug(){
