@@ -12,7 +12,7 @@ class Payments extends Component {
             <StripeCheckout
             name="PharmaGO"
             description="Efetue seu pagamento aqui!"
-            amount={preco * 100}
+            amount={preco * 100.01}
             currency="BRL"
             token={token => this.props.handleToken(token)}
             stripeKey={process.env.REACT_APP_STRIPE_KEY}

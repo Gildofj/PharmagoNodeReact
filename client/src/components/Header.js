@@ -38,7 +38,6 @@ class Header extends Component {
                         <Link to="/" style={{fontSize: '12px'}}>Sua Conta</Link>
                         <Link to="/" style={{fontSize: '12px'}}>Configurações</Link>
                         <Link to="/suporte" style={{fontSize: '12px'}}>Suporte</Link>
-                        <Divider />
                         <Link  to="/api/logout" style={{fontSize: '12px'}}>Sair</Link>
                     </Dropdown>
                 </Navbar>
