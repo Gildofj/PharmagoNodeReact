@@ -35,13 +35,17 @@ class Drug extends Component {
                                 <div>
                                 <img src={visaImage} width="60" alt="Visa" /> 
                                 </div>
-                                <div className="right">
-                                    <Button onClick={this.saveCart(drug)}>Carrinho</Button>
-                                </div>
-                                <div className="right" style={{
+                                <div style={{
                                         position: 'absolute',
                                         right: '20px',
                                         bottom: '10px'
+                                    }}>
+                                    <Button onClick={this.saveCart(drug)}>Carrinho</Button>
+                                </div>
+                                <div style={{
+                                        position: 'absolute',
+                                        right: '150px',
+                                        bottom: '-5px'
                                     }}>
                                     <h4><strong>R${drug.preco}</strong></h4>
                                 </div>
