@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Navbar, NavItem, Dropdown, Divider, Icon } from 'react-materialize';
+import { Navbar, NavItem, Dropdown, Icon } from 'react-materialize';
 import { Link } from 'react-router-dom';
 import M from 'materialize-css';
 import { connect } from 'react-redux';
