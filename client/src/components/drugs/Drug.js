@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Row, Col, Button, Card } from 'react-materialize';
+import { Row, Col, Button, Card, Toast } from 'react-materialize';
 import { connect } from 'react-redux';
 import { fetchDrug } from '../../actions';
 import visaImage from '../../images/VISA.png'
@@ -26,7 +26,9 @@ class Drug extends Component {
                                 <div className="card-title" style={{marginTop:'-50px'}}>
                                     <h3><strong>{drug.tituloDrug}</strong></h3>
                                 </div>
-                                <div >
+                                <div style={{
+                                    marginTop: '50px'
+                                }}>
                                     <p>{drug.descricao} </p>
                                 </div>
                                 
@@ -38,9 +40,9 @@ class Drug extends Component {
                                 <div style={{
                                         position: 'absolute',
                                         right: '20px',
-                                        bottom: '10px'
+                                        bottom: '40px'
                                     }}>
-                                    <Button onClick={this.saveCart(drug)}>Carrinho</Button>
+                                    <Toast onClick={this.saveCart(drug)} options={{html: 'Item Adicionado ao Carrinho!'}}>Carrinho</Toast>
                                 </div>
                                 <div style={{
                                         position: 'absolute',
