@@ -9,7 +9,7 @@ import Login from './Login';
 import Landing from './Landing';
 import Drug from './drugs/Drug';
 import Suporte from './suporte/Suporte';
-import Carrinho from './Carrinho';
+import Carrinho from './Carrinho/Carrinho';
 
  
 class App extends Component{

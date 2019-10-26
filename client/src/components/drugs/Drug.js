@@ -4,14 +4,30 @@ import { connect } from 'react-redux';
 import { fetchDrug } from '../../actions';
 import visaImage from '../../images/VISA.png'
 
-class Drug extends Component {
+// function saveCartOnLocalstorage(drug) {
+//     if(localStorage.getItem('cart') === null){
+//         localStorage.setItem('cart', JSON.stringify([drug]))
+//     } else {
+//         const carrinho = JSON.parse(localStorage.getItem('cart'))
+//         carrinho.push(drug)
+//         localStorage.setItem('cart', JSON.stringify([carrinho]));
+//     }
+// }
+
+class Drug extends Component {    
     componentDidMount() {
         this.props.fetchDrug();
     }
 
 
-    saveCart(drug) {
-        localStorage.setItem('cart', JSON.stringify(drug));
+    saveCart = (drug) => {
+        if(localStorage.getItem('cart') === null){
+            localStorage.setItem('cart', JSON.stringify([drug]))
+        } else {
+            const carrinho = JSON.parse(localStorage.getItem('cart'))
+            carrinho.push(drug)
+            localStorage.setItem('cart', JSON.stringify(carrinho));
+        }
     }
 
     renderDrug(){
@@ -39,10 +55,11 @@ class Drug extends Component {
                                 </div>
                                 <div style={{
                                         position: 'absolute',
-                                        right: '20px',
+                                        right: '20px',  
                                         bottom: '40px'
-                                    }}>
-                                    <Toast onClick={this.saveCart(drug)} options={{html: 'Item Adicionado ao Carrinho!'}}>Carrinho</Toast>
+                                    }}
+                                    onClick={this.saveCart.bind(this, drug)}>
+                                    <Toast options={{html: 'Item Adicionado ao Carrinho!'}}>Carrinho</Toast>
                                 </div>
                                 <div style={{
                                         position: 'absolute',
