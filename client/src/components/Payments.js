@@ -4,28 +4,35 @@ import Button from 'react-materialize/lib/Button';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
+let carrinho = JSON.parse(localStorage.getItem('cart'));
+
+let soma = () => { 
+    if(carrinho !== null){
+    carrinho.reduce((PreVal, produto) => {
+    return parseFloat(PreVal) + parseFloat(produto.preco);
+}, 0)
+    } else {
+        return 0;
+    }
+}
+
 class Payments extends Component {
     render(){
-        const carrinho =  JSON.parse(localStorage.getItem('cart'));
-        return carrinho.map(produto => {
-            let preco = parseFloat(produto.preco);
-            let soma = preco + preco
-            return(
-                <StripeCheckout
-                name="PharmaGO"
-                description="Efetue seu pagamento aqui!"
-                amount={soma * 100.01}
-                currency="BRL"
-                token={token => this.props.handleToken(token)}
-                stripeKey={process.env.REACT_APP_STRIPE_KEY}
-                >
-                    <Button>
-                        Efetuar Pagamento!
-                    </Button>
-                </StripeCheckout>
+        return(
+            <StripeCheckout
+            name="PharmaGO"
+            description="Efetue seu pagamento aqui!"
+            amount={soma * 100.01}
+            currency="BRL"
+            token={token => this.props.handleToken(token)}
+            stripeKey={process.env.REACT_APP_STRIPE_KEY}
+            >
+                <Button>
+                    Efetuar Pagamento!
+                </Button>
+            </StripeCheckout>
             );
-        })  
-    }
+        }
 }
 
 export default connect(null, actions)(Payments);
