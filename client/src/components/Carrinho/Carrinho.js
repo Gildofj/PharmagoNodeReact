@@ -12,7 +12,6 @@ class Carrinho extends Component {
     //         var index = arrayCarrinho.indexOf(produto);
     //         if (index !== -1) arrayCarrinho.splice(index, 1);
     //         localStorage.setItem('cart', arrayCarrinho)
-    //         window.reload()
     //     })
     // }
 
