@@ -6,15 +6,9 @@ import * as actions from '../actions';
 
 let carrinho = JSON.parse(localStorage.getItem('cart'));
 
-let soma = () => { 
-    if(carrinho !== null){
-    carrinho.reduce((PreVal, produto) => {
+let soma = carrinho && carrinho.reduce((PreVal, produto) => {
     return parseFloat(PreVal) + parseFloat(produto.preco);
 }, 0)
-    } else {
-        return 0;
-    }
-}
 
 class Payments extends Component {
     render(){
@@ -31,8 +25,8 @@ class Payments extends Component {
                     Efetuar Pagamento!
                 </Button>
             </StripeCheckout>
-            );
-        }
+        );
+    } 
 }
 
 export default connect(null, actions)(Payments);
