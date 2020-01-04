@@ -1,4 +1,4 @@
-# PharmaGO
+# `PharmaGO`
 
 Aplicativo escrito em Node.js e React.js utilizando banco de dados não relacional MongoDB,  o aplicativo feito tem o intuito de ser um delivery
 de farmácias onde o usuário vai poder pedir seus medicamentos de onde quiser e onde quiser apenas com seu dispositivo móvel, a ideia surgiu
