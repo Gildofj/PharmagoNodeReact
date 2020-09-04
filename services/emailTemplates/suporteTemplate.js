@@ -1,7 +1,7 @@
-const keys = require('../../config/keys');
+const keys = require("../../config/keys");
 
-module.exports = mail => {
-    return `
+module.exports = (mail) => {
+  return `
     <html>  
         <div>
             <h3>Seu ticket foi aberto conosco!</h3>
